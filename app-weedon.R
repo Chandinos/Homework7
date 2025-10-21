@@ -113,7 +113,7 @@ server <- function(input, output, session) {
     
     sample_corr <- reactiveValues (corr_data = NULL, corr_truth = NULL)
 
-    observeEvent(input$corr_sample, {
+    observeEvent(input$corr_sample) {
 
       if(input$hhl_corr == "all"){
         hhl_sub <- HHLvals
@@ -144,6 +144,7 @@ server <- function(input, output, session) {
       } else {
         schl_sub <- SCHLvals[as.character(20:24)]
       }
+}
 
       corr_vars <- c(input$corr_x, input$corr_y)
 
